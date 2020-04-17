@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component,Fragment } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Membre from "./components/Membre";
 
-function App() {
+class  App extends Component {
+  render (){  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  /* fragment permet d'envelopper le code jsx au lieu d'un balise div vide  */
+ <Fragment> 
+      <div>
+        <div className="App">
+          <h1> React App</h1>
+        </div>
+       </div>
+      </Fragment>
+      </Membre>
+    
   );
+  }
 }
 
 export default App;
