@@ -1,8 +1,9 @@
 import React from "react";
 
-const Membre = () => (
+const Membre = () => {
+  const name = "mohsen";
 
- <h2> Membre de la famille : nom </h2> 
-)
+  return <h2> Membre de la famille :{name} </h2>;
+};
 
 export default Membre;
