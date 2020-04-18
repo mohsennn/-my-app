@@ -21,10 +21,15 @@ const famille = {
   },
 };
 
+
 class App extends Component {
   state = {
     famille,
   };
+
+
+  handleClick=() => console.log('display click ');
+
   render() {
     const { titre } = this.props;
     const { famille } = this.state;
@@ -35,8 +40,9 @@ class App extends Component {
         <Membre nom={famille.membre2.nom} />
         <Membre nom={famille.membre3.nom} />
         <Membre nom={famille.membre4.nom} />
+        <button onClick={this.handleClick}> veiller </button>
       </div>
-    );
+    )
   }
 }
 
