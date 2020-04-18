@@ -28,9 +28,16 @@ class App extends Component {
   };
 
   handleClick = (num) => {
-     const list = { ...this.state.famille };
+    const list = { ...this.state.famille };
     list.membre1.age += num;
     this.setState({ list });
+  };
+
+  handleChange = (event) => {
+    const famille  = { ...this.state.famille };
+    const newInputValue = event.target.value;
+    famille.membre1.nom = newInputValue
+    this.setState({ famille  });
   };
 
   render() {
@@ -39,11 +46,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1> {titre}</h1>
+        <input value={famille.membre1.nom} onChange={this.handleChange} 
+        type='text'/>
         <Membre nom={famille.membre1.nom} age={famille.membre1.age} />
         <Membre nom={famille.membre2.nom} age={famille.membre2.age} />
         <Membre nom={famille.membre3.nom} age={famille.membre3.age} />
         <Membre nom={famille.membre4.nom} age={famille.membre4.age} />
-        <Button vieillir={() =>this.handleClick(5)} />
+        <Button vieillir={() => this.handleClick(5)} />
       </div>
     );
   }
