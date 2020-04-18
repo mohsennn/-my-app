@@ -2,22 +2,41 @@ import React, { Component, Fragment } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Membre from "./components/Membre";
+const famille = {
+  membre1: {
+    nom: "mohsen1",
+    age: 21,
+  },
+  membre2: {
+    nom: "mohsen2",
+    age: 22,
+  },
+  membre3: {
+    nom: "mohsen3",
+    age: 23,
+  },
+  membre4: {
+    nom: "mohsen4",
+    age: 24,
+  },
+};
 
 class App extends Component {
+  state = {
+    famille,
+  };
   render() {
-    const {titre}=this.props;
+    const { titre } = this.props;
+    const { famille } = this.state;
     return (
       <div className="App">
         <h1> {titre}</h1>
-        <Membre nom ='mohsen'/>
-        <Membre nom ='mohsen1'/>
-        <Membre nom ='mohsen2'/>
-        <Membre nom ='mohsen3'/>
-        <Membre nom ='mohsen4' children ='je suis un homme !!!'>
-    
-        </Membre>
-        </div>
-    )
+        <Membre nom={famille.membre1.nom} />
+        <Membre nom={famille.membre2.nom} />
+        <Membre nom={famille.membre3.nom} />
+        <Membre nom={famille.membre4.nom} />
+      </div>
+    );
   }
 }
 
