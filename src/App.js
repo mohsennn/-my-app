@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Membre from "./components/Membre";
+import Button from "./components/Buttons";
 const famille = {
   membre1: {
     nom: "mohsen1",
@@ -26,13 +27,10 @@ class App extends Component {
     famille,
   };
 
-  handleClick = () => {
-    console.log("display click ");
-     //faire un copie de la liste famille dans l'objet list
-    const list = { ...this.state.famille };
-    list.membre1.age += 1;
-    //mettre à jour la liste 
-     this.setState({ list });
+  handleClick = (num) => {
+     const list = { ...this.state.famille };
+    list.membre1.age += num;
+    this.setState({ list });
   };
 
   render() {
@@ -45,7 +43,7 @@ class App extends Component {
         <Membre nom={famille.membre2.nom} age={famille.membre2.age} />
         <Membre nom={famille.membre3.nom} age={famille.membre3.age} />
         <Membre nom={famille.membre4.nom} age={famille.membre4.age} />
-        <button onClick={this.handleClick}> veiller </button>
+        <Button vieillir={() =>this.handleClick(5)} />
       </div>
     );
   }
