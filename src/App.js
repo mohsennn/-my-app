@@ -21,14 +21,20 @@ const famille = {
   },
 };
 
-
 class App extends Component {
   state = {
     famille,
   };
 
-
-  handleClick=() => console.log('display click ');
+  handleClick = () => {
+    console.log("display click ");
+    debugger
+    //faire un copie de la liste famille dans l'objet list
+    const list = { ...this.state.famille };
+    list.membre1.age += 1;
+debugger
+    this.setState({ list });
+  };
 
   render() {
     const { titre } = this.props;
@@ -36,13 +42,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1> {titre}</h1>
-        <Membre nom={famille.membre1.nom} />
-        <Membre nom={famille.membre2.nom} />
-        <Membre nom={famille.membre3.nom} />
-        <Membre nom={famille.membre4.nom} />
+        <Membre nom={famille.membre1.nom} age={famille.membre1.age} />
+        <Membre nom={famille.membre2.nom} age={famille.membre2.age} />
+        <Membre nom={famille.membre3.nom} age={famille.membre3.age} />
+        <Membre nom={famille.membre4.nom} age={famille.membre4.age} />
         <button onClick={this.handleClick}> veiller </button>
       </div>
-    )
+    );
   }
 }
 
