@@ -10,7 +10,7 @@ const famille = {
   },
   membre2: {
     nom: "mohsen2",
-    age: 22,
+    age: 24,
   },
   membre3: {
     nom: "mohsen3",
@@ -18,7 +18,7 @@ const famille = {
   },
   membre4: {
     nom: "mohsen4",
-    age: 24,
+    age: 19,
   },
 };
 
