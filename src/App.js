@@ -28,12 +28,11 @@ class App extends Component {
 
   handleClick = () => {
     console.log("display click ");
-    debugger
-    //faire un copie de la liste famille dans l'objet list
+     //faire un copie de la liste famille dans l'objet list
     const list = { ...this.state.famille };
     list.membre1.age += 1;
-debugger
-    this.setState({ list });
+    //mettre à jour la liste 
+     this.setState({ list });
   };
 
   render() {
