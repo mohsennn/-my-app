@@ -52,22 +52,26 @@ class App extends Component {
     let description = null
     if (isShow) { 
       description = (
-      /*mettre de JSX */
     <strong> welcome !!!</strong>
     )
     }
-    return (
+    /*create map of object */
+    const liste =Object.keys(famille)
+    .map(membre => (
+      //en js si on sait pas le nom de variable famille[membre] , dynamique
+     <Membre  nom = {famille[membre].nom} 
+              age = {famille[membre].age} />
+                 ))
+    console.log(liste);
+    return ( 
       <div className='App'>
         <h1> {titre}</h1>
         <input
           value = {famille.membre1.nom}
           onChange = {this.handleChange}
-          type='text'
-        />
-        <Membre nom= {famille.membre1.nom} age= {famille.membre1.age} />
-        <Membre nom= {famille.membre2.nom} age= {famille.membre2.age} />
-        <Membre nom= {famille.membre3.nom} age= {famille.membre3.age} />
-        <Membre nom= {famille.membre4.nom} age= {famille.membre4.age}>
+          type='text'/>
+          {liste}
+      { /* <Membre nom= {famille.membre4.nom} age= {famille.membre4.age}>
           {
             description 
           }
@@ -76,6 +80,7 @@ class App extends Component {
               isShow ? 'Cacher' : 'Montrer'
            } </button>
         </Membre>
+      */}
         <Button 
         vieillir={() => this.handleClick(5)} />
       </div>
