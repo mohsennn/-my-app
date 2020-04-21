@@ -52,19 +52,24 @@ class App extends Component {
       <div className='App'>
         <h1> {titre}</h1>
         <input
-          value={famille.membre1.nom}
-          onChange={this.handleChange}
+          value = {famille.membre1.nom}
+          onChange = {this.handleChange}
           type='text'
         />
-        <Membre nom={famille.membre1.nom} age={famille.membre1.age} />
-        <Membre nom={famille.membre2.nom} age={famille.membre2.age} />
-        <Membre nom={famille.membre3.nom} age={famille.membre3.age} />
-        <Membre nom={famille.membre4.nom} age={famille.membre4.age}>
-          {isShow ? <h3>isShow is true</h3> : <h3> isShow is false</h3>}
-
-          <button onClick={this.handleShowDescription}> Monter </button>
+        <Membre nom= {famille.membre1.nom} age= {famille.membre1.age} />
+        <Membre nom= {famille.membre2.nom} age= {famille.membre2.age} />
+        <Membre nom= {famille.membre3.nom} age= {famille.membre3.age} />
+        <Membre nom= {famille.membre4.nom} age= {famille.membre4.age}>
+          {
+            isShow ? <h3>isShow is true</h3> : <h3> isShow is false</h3>
+          }
+          <button onClick={this.handleShowDescription}>
+           {
+              isShow ? 'Montrer' : 'Cacher'
+           } </button>
         </Membre>
-        <Button vieillir={() => this.handleClick(5)} />
+        <Button 
+        vieillir={() => this.handleClick(5)} />
       </div>
     );
   }
