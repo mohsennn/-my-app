@@ -46,6 +46,11 @@ class App extends Component {
     this.setState({ isShow });
   };
 
+  cacherNom = id => { 
+    const famille = { ...this.state.famille };
+    famille[id].nom='X'
+    this.setState({famille})
+  }
   render() {
     const { titre } = this.props;
     const { famille, isShow } = this.state;
@@ -58,8 +63,9 @@ class App extends Component {
     /*create map of object */
     const liste =Object.keys(famille)
     .map(membre => (
-      //en js si on sait pas le nom de variable famille[membre] , dynamique
-     <Membre  nom = {famille[membre].nom} 
+     <Membre 
+            cacherNom={()=> this.cacherNom(membre)}
+             nom = {famille[membre].nom} 
               age = {famille[membre].age} />
                  ))
     console.log(liste);
