@@ -45,9 +45,17 @@ class App extends Component {
     const isShow = !this.state.isShow;
     this.setState({ isShow });
   };
+
   render() {
     const { titre } = this.props;
     const { famille, isShow } = this.state;
+    let description = null
+    if (isShow) { 
+      description = (
+      /*mettre de JSX */
+    <strong> welcome !!!</strong>
+    )
+    }
     return (
       <div className='App'>
         <h1> {titre}</h1>
@@ -61,11 +69,11 @@ class App extends Component {
         <Membre nom= {famille.membre3.nom} age= {famille.membre3.age} />
         <Membre nom= {famille.membre4.nom} age= {famille.membre4.age}>
           {
-            isShow ? <h3>isShow is true</h3> : <h3> isShow is false</h3>
+            description 
           }
           <button onClick={this.handleShowDescription}>
            {
-              isShow ? 'Montrer' : 'Cacher'
+              isShow ? 'Cacher' : 'Montrer'
            } </button>
         </Membre>
         <Button 
